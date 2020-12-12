@@ -1,0 +1,16 @@
+santiweight/hls-bug-brittany/src/Lib.hs
+2020-12-11 18:27:42.718845 [ThreadId 5982] - Plugin ModuleName  prefix Just "/Users/santiweight/hls-bug-brittany/src"
+2020-12-11 18:27:42.718885 [ThreadId 5982] - Plugin ModuleName  mdlName Just "Lib"
+2020-12-11 18:27:42.718989 [ThreadId 5991] - finish: ModuleName.GetParsedModule (took 0.00s)
+2020-12-11 18:27:42.719014 [ThreadId 5982] - Plugin ModuleName  correct Just "Lib" stated Just (Range {_start = Position {_line = 0, _character = 7}, _end = Position {_line = 0, _character = 10}},"Lib")
+2020-12-11 18:27:42.71907 [ThreadId 5982] - Plugin ModuleName  actions []
+2020-12-11 18:27:42.719291 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":127}
+2020-12-11 18:27:43.886555 [ThreadId 5] - ---> {"jsonrpc":"2.0","id":128,"method":"textDocument/formatting","params":{"textDocument":{"uri":"file:///Users/santiweight/hls-bug-brittany/src/Lib.hs"},"options":{"tabSize":4,"insertSpaces":true}}}
+2020-12-11 18:27:43.886895 [ThreadId 5997] - finish: Formatter (took 0.00s)
+2020-12-11 18:27:43.886922 [ThreadId 5996] - Formatter.doFormatting: contents="module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: IO ()\nsomeFunc = putStrLn \"someFunc\"\n\nnewtype Bar a = Bar a\n\npattern Foo :: Int -> Bar Int\npattern Foo a = Bar a\n\n"
+[Error - 6:27:43 PM] Request textDocument/formatting failed.
+  Message: brittanyCmd: stdin:10:1-11: Invalid type signature: pattern Foo :: ...
+Perhaps you meant to use PatternSynonyms?
+
+  Code: -32602
+2020-12-11 18:27:43.89336 [ThreadId 7] - <--2--{"error":{"code":-32602,"message":"brittanyCmd: stdin:10:1-11: Invalid type signature: pattern Foo :: ...\nPerhaps you meant to use PatternSynonyms?\n"},"jsonrpc":"2.0","id":128}
